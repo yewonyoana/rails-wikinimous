@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg bg-dark text-white p-3 mb-3">
+  <div class="navbar-brand ml-5">Rails Wikinimous</div>
+</nav>
+<div class="container d-flex flex-column justify-content-between">
+  <%= link_to 'Add an Article', new_article_path, class: "text-decoration-none btn btn-dark mt-3 align-self-end" %>
+  <% @articles.each do |article| %>
+    <div class="card-body mt-1 mb-1">
+      <p class="card-title fw-bold"><i class="fa-solid fa-ticket"></i> <%= link_to article.title, article_path(article) %></p>
+      <p class="card-subtitle text-muted"><%= article.content %></p>
+    </div>
+  <% end %>
+</div>
